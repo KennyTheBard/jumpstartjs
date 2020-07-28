@@ -1,0 +1,28 @@
+{
+    "dotenv": {
+        "port": "8080",
+        "version": "^8.2.0"
+    },
+    "middleware": {
+        "cors": {
+            "version": "^2.8.5"
+        },
+        "helmet": {
+            "version": "^3.23.3"
+        },
+        "morgan": {
+            "use": "morgan(':remote-addr - :remote-user [:date[web]] \":method :url HTTP/:http-version\" :status :res[content-length]')",
+            "version": "^1.9.1"
+        },
+        "json": {
+
+        }
+    },
+    "routes": {
+        "test": "/test",
+        "deepTest": "/test/:id/deep-test"
+    },
+    "models": {
+        "source": "test.sql"
+    }
+}

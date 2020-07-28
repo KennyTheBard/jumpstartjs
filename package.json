@@ -1,0 +1,25 @@
+{
+  "name": "jumpstartjs",
+  "version": "1.0.0",
+  "description": "A little module for a quick start on your node.js application based on the database schema",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KennyTheBard/jumpstartjs.git"
+  },
+  "keywords": [
+    "metaprogramming"
+  ],
+  "author": "KennyTheBard",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KennyTheBard/jumpstartjs/issues"
+  },
+  "bin": {
+    "jumpstart": "node index.js"
+  },
+  "homepage": "https://github.com/KennyTheBard/jumpstartjs#readme"
+}
