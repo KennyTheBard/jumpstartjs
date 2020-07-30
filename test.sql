@@ -10,3 +10,5 @@ create table deep_test (
 );
 
 ALTER TABLE deep_test ADD FOREIGN KEY (test_id) REFERENCES test (id);
+
+ALTER TABLE deep_test zet;
