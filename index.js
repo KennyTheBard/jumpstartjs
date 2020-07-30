@@ -95,12 +95,33 @@ function handleAlterTable(instruction, models) {
     }
 }
 
+const paranthesisRegex = /\(([^)]+)\)/g;
+
 function addForeignKey(instruction, table) {
-    
+    let fkFields = instruction.match(paranthesisRegex).map(s => s.substring(1, s.length - 1));
+    let refTable = instruction.split(')')[1].split('(')[0].trim().split(' ')[1];
+
+    let fields = table.fields.filter(f => f.name === fkFields[0]);
+
+    if (fields.length == 0) {
+        console.error(`No field named ${fkFields[0]} in table ${table.meta.tableName}`);
+        return;
+    } else if (fields.length > 1) {
+        console.error(`Multiple tables named ${fkFields[0]} in table ${table.meta.tableName}`);
+        return;
+    }
+
+    let field = fields[0];
+
+    field['fk'] = {
+        refTable: refTable,
+        refField: fkFields[1]
+    };
 }
 
 const fs = require('fs');
 
 let meta = JSON.parse(fs.readFileSync('test.json', 'utf8'));
 
-console.log(JSON.stringify(extractSQL(meta), null, 2));
+let res = extractSQL(meta);
+console.log(JSON.stringify(res, null, 2));
