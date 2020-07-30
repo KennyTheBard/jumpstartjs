@@ -16,7 +16,7 @@
             "version": "^1.9.1"
         },
         "json": {
-
+            "use": "express.json()"
         }
     },
     "routes": {

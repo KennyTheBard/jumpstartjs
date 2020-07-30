@@ -18,6 +18,9 @@
   "bugs": {
     "url": "https://github.com/KennyTheBard/jumpstartjs/issues"
   },
+  "dependencies": {
+    "humps": "^2.0.1"
+  },
   "bin": {
     "jumpstart": "node index.js"
   },

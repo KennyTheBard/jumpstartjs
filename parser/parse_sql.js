@@ -1,4 +1,5 @@
 const fs = require('fs');
+const humps = require('humps');
 
 const paranthesisRegex = /\(([^)]+)\)/g;
 
@@ -51,7 +52,8 @@ function handleCreateTable(instruction, models) {
 
     let obj = {
         meta: {
-            tableName: instruction.split(' ')[2]
+            tableName: instruction.split(' ')[2],
+            modelName: humps.camelize(instruction.split(' ')[2])
         },
         fields: fields.map(f => f.split(' ')).map(f => {
             return {
