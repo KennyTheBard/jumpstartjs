@@ -1,5 +1,6 @@
 {
     "dotenv": {
+        "env": "dev",
         "port": "8080",
         "version": "^8.2.0"
     },
